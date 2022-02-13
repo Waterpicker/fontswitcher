@@ -34,7 +34,7 @@ processResources {
 
 shadowJar {
     exclude "fabric.mod.json"
-
+    exclude "fontswitcher.accessWidener"
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
 }
@@ -47,6 +47,14 @@ remapJar {
 
 jar {
     classifier "dev"
+}
+
+java {
+    withSourcesJar()
+}
+
+loom {
+    accessWidenerPath.set(file("src/main/resources/fontswitcher.accessWidener"))
 }
 
 sourcesJar {

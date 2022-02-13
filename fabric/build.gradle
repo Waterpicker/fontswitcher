@@ -48,6 +48,14 @@ jar {
     classifier "dev"
 }
 
+java {
+    withSourcesJar()
+}
+
+loom {
+    accessWidenerPath.set(file("src/main/resources/fontswitcher.accessWidener"))
+}
+
 sourcesJar {
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources

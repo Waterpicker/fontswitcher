@@ -27,5 +27,6 @@
   },
   "suggests": {
     "flamingo": "*"
-  }
+  },
+  "accessWidener": "fontswitcher.accessWidener"
 }

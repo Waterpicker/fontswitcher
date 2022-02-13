@@ -10,6 +10,14 @@ architectury {
     common()
 }
 
+java {
+    withSourcesJar()
+}
+
+loom {
+    accessWidenerPath.set(file("src/main/resources/fontswitcher.accessWidener"))
+}
+
 publishing {
     publications {
         mavenCommon(MavenPublication) {

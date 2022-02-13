@@ -1,0 +1,5 @@
+accessWidener v1 named
+mutable field net/minecraft/client/Minecraft DEFAULT_FONT Lnet/minecraft/resources/ResourceLocation;
+mutable field net/minecraft/network/chat/Style DEFAULT_FONT Lnet/minecraft/resources/ResourceLocation;
+accessible field net/minecraft/client/gui/font/FontManager fontSets Ljava/util/Map;
+accessible field net/minecraft/client/Minecraft fontManager Lnet/minecraft/client/gui/font/FontManager;
