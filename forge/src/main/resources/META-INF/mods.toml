@@ -1,33 +1,33 @@
 modLoader = "javafml"
 loaderVersion = "[37,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT"
 
 [[mods]]
-modId = "examplemod"
+modId = "fontswitcher"
 version = "${version}"
-displayName = "Example Mod"
-authors = "Me!"
+displayName = "Font Switcher"
+authors = "Mysticpasta1, Waterpicker"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Switch to a modded font from your mod's resource folder
 '''
 #logoFile = ""
 
-[[dependencies.examplemod]]
+[[dependencies.fontswitcher]]
 modId = "forge"
 mandatory = true
 versionRange = "[37,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.fontswitcher]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.17.1,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.fontswitcher]]
 modId = "architectury"
 mandatory = true
 versionRange = "[2.3.23,)"

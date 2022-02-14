@@ -15,11 +15,17 @@ configurations {
     developmentForge.extendsFrom common
 }
 
+repositories {
+    maven {
+        url = "https://maven.shedaniel.me/"
+    }
+}
+
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
-
+    modImplementation("me.shedaniel.cloth:cloth-config-forge:6.1.48")
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
@@ -53,11 +59,8 @@ java {
     withSourcesJar()
 }
 
-loom {
-    accessWidenerPath.set(file("src/main/resources/fontswitcher.accessWidener"))
-}
-
 sourcesJar {
+    exclude "fontswitcher.accessWidener"
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
@@ -79,6 +82,5 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
     }
 }

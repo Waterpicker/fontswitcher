@@ -1,6 +1,9 @@
-package net.examplemod;
+package com.mystic.fontswitcher;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import dev.architectury.event.events.client.ClientTickEvent;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
@@ -10,17 +13,17 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
-import java.util.Set;
 
 import static dev.architectury.event.events.client.ClientTickEvent.CLIENT_POST;
 import static dev.architectury.registry.client.keymappings.KeyMappingRegistry.*;
 
-public class ExampleMod {
-    public static final String MOD_ID = "examplemod";
+public class FontSwitcher {
+    public static final String MOD_ID = "fontswitcher";
     private static KeyMapping binding;
 
     public static void clientInit() {
-        register(binding = new KeyMapping("key.fontswitcher", 76, "key.categories.misc"));
+        AutoConfig.register(FontSwitchConfig.class, GsonConfigSerializer::new);
+        register(binding = new KeyMapping("key.fontswitcher", InputConstants.KEY_O, "key.categories.misc"));
         CLIENT_POST.register(new ClientTickEvent.Client() {
             @Override
             public void tick(Minecraft instance) {
@@ -34,10 +37,7 @@ public class ExampleMod {
                                 super.init();
 
                                 addRenderableWidget(new Button(0, 0, 100,20, new TextComponent("Toggle"), a -> {
-                                    List<ResourceLocation> locations = minecraft.fontManager.fontSets.keySet().stream().sorted().toList();
-
-                                    ResourceLocation location = locations.get(index = (index + 1) % locations.size());
-
+                                    ResourceLocation location = new ResourceLocation(FontSwitchConfig.get().FontNamespace, FontSwitchConfig.get().FontPath);
                                     Minecraft.DEFAULT_FONT = location;
                                     Style.DEFAULT_FONT = location;
                                 }));

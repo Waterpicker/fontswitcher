@@ -1,0 +1,6 @@
+{
+  "title.fontswitcher.config": "Font Switcher",
+  "option.fontswitcher.fontnamespace": "Font's Namespace",
+  "option.fontswitcher.fontpath": "Font's Path",
+  "key.fontswitcher": "Open Menu (Esc to close)"
+}

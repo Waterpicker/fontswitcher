@@ -1,22 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "fontswitcher",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Font Switcher",
+  "description": "Switch to a modded font from your mod's resource folder",
   "authors": [
-    "Me!"
+    "Mysticpasta1, Waterpicker"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "",
+    "sources": ""
   },
-  "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.examplemod.fabric.ExampleModFabric"
+    "client": [
+      "com.mystic.fontswitcher.fabric.FontSwitcherFabric"
+    ],
+    "modmenu": [
+      "com.mystic.fontswitcher.fabric.FontModMenuFabric"
     ]
   },
   "depends": {
@@ -27,6 +29,13 @@
   },
   "suggests": {
     "flamingo": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/Axe4aZCT6u"
+      }
+    }
   },
   "accessWidener": "fontswitcher.accessWidener"
 }
