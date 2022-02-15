@@ -12,10 +12,8 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 
-import java.util.List;
-
 import static dev.architectury.event.events.client.ClientTickEvent.CLIENT_POST;
-import static dev.architectury.registry.client.keymappings.KeyMappingRegistry.*;
+import static dev.architectury.registry.client.keymappings.KeyMappingRegistry.register;
 
 public class FontSwitcher {
     public static final String MOD_ID = "fontswitcher";

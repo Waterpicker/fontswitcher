@@ -1,11 +1,7 @@
 package com.mystic.fontswitcher.forge;
 
-import com.mystic.fontswitcher.FontSwitchConfig;
 import com.mystic.fontswitcher.FontSwitcher;
 import com.mystic.fontswitcher.util.CreateScreenUtil;
-import me.shedaniel.clothconfig2.api.ConfigBuilder;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraftforge.client.ConfigGuiHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
